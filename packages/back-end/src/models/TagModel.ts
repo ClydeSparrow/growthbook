@@ -22,7 +22,7 @@ function toTagInterface(doc: TagDocument | null): TagInterface[] {
   const json = doc.toJSON();
   if (!json.tags) return [];
   const settings = json.settings || {};
-  return json.tags.map((t) => {
+  return json.tags.map((t: any) => {
     return {
       id: t,
       color: settings[t]?.color || "#029dd1",
